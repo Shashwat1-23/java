@@ -1,0 +1,197 @@
+import java.util.Scanner;
+
+
+
+interface Vol {
+
+    public void volume();
+
+}
+
+
+
+class cone implements Vol {
+
+    int r, h;
+
+    double pi = 3.14;
+
+    cone(int r, int h) {
+
+        this.r = r;
+
+        this.h = h;
+
+    }
+
+
+
+    public void volume() {
+
+        System.out.println("Volume of cone: " + (pi * r * r * h) / 3);
+
+    }
+
+}
+
+
+
+class hemisphere implements Vol {
+
+    int r;
+
+    double pi = 3.14;
+
+    hemisphere(int r) {
+
+        this.r = r;
+
+    }
+
+
+
+    public void volume() {
+
+        System.out.println("Volume of hemisphere: " + (2 * pi * r * r * r) / 3);
+
+    }
+
+}
+
+
+
+class cylinder implements Vol{
+
+    int m, n;
+
+    double pi = 3.14;
+
+    cylinder(int m, int n) {
+
+        this.m = m;
+
+        this.n = n;
+
+    }
+
+
+
+    public void volume() {
+
+        System.out.println("Volume of cyliner: " + pi * m * m * n);
+
+    }
+
+}
+
+
+
+public class LabQ15 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Radius: ");
+
+        int r = sc.nextInt();
+
+        System.out.print("Height: ");
+
+        int h = sc.nextInt();
+
+        cone obj = new cone(r, h);
+
+        obj.volume();
+
+        cylinder obj1 = new cylinder(r, h);
+
+        obj1.volume();
+
+        hemisphere obj2 = new hemisphere(r);
+
+        obj2.volume();
+
+    }
+
+}
+
+
+class CSthread extends Thread{
+
+	public void show() {
+		int count=0;
+
+		try {
+
+			System.out.println("CS Thread " + count);
+
+			sleep(500);
+
+			count++;
+
+		} catch (InterruptedException e) {
+
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+
+		}
+
+	}
+
+}
+
+
+
+class ITthread extends Thread{
+
+	public void show() {
+
+		int count = 0;
+
+		System.out.println("IT Thread " + count);
+
+		System.out.println();
+
+		try {
+
+			sleep(500);
+
+			count++;
+
+		} catch (InterruptedException e) {
+
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+
+		}
+
+	}
+
+}
+
+
+
+public class multithread {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+
+		CSthread t1 = new CSthread();
+
+		ITthread t2 = new ITthread();
+
+		t1.show();
+
+		t2.show();
+
+	}
+
+}
+
+
+
+
