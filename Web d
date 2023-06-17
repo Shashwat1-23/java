@@ -20,3 +20,22 @@ function daysUntilChristmas() {
 // Call the function and display the result
 const daysLeftUntilChristmas = daysUntilChristmas();
 console.log("There are", daysLeftUntilChristmas, "days left until Christmas.");
+
+
+<html>
+
+<body bgcolor="pink">
+
+<h3>Explode Function</h3>
+
+<?php
+
+$str="I am simple boy!";
+
+print_r(explode(" ",$str));
+
+?>
+
+</body>
+
+</html>
